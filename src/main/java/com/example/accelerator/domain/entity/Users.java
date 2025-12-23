@@ -30,7 +30,7 @@ public class Users {
     @JoinColumn(name = "hospital_id")
     private Hospital hospitalName;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt = LocalDateTime.now();
 
@@ -42,6 +42,7 @@ public class Users {
     @PreUpdate
     protected void onUpdate(){
         updatedAt = LocalDateTime.now();
+
     }
 
 }
